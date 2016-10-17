@@ -1,0 +1,23 @@
+include ../card/card
+include ../img/img
+include ../img-caption/img-caption
+
+mixin wrapper()
+	+b.wrapper&attributes(attributes)
+		+card()
+			+e.header&attributes(attributes)
+				+e.header-img&attributes(attributes)
+					+img('/images/bird.jpg', 'bird')
+				+e('h2').header-title&attributes(attributes)
+					| Hello card word
+				+e('h3').header-subtitle&attributes(attributes)
+					| This is subheader
+			+img-caption('/images/bird-big.jpg', 'big bird', 'BEM is awesome')
+			+e.p&attributes(attributes)
+				|  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas minus nisi, alias error, quia cumque reiciendis eius, facere itaque dolores reprehenderit ut? Ullam, modi, quasi.
+			+e.footer&attributes(attributes)
+				+b('A').link._upper._orange&attributes({href: "#"})
+					| Yes
+				+b('A').link._upper&attributes({href: "#"})
+					| No
+		block

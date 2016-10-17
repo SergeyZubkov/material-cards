@@ -1,0 +1,5 @@
+mixin img-caption(src, alt, caption)
+	+b.img-caption&attributes(attributes)
+		+img(src, alt)
+		+e.text&attributes(attributes) #{caption}
+		block
